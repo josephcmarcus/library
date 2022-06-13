@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Joan&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -13,22 +16,25 @@
         <div class="container-header">
             <h1 class="header-title">Personal Book Tracker</h1>
             <p class="header-description">Keep track of your book reading progress by 
-                adding books and marking them read.</p>
-            <button class="header-button">Add Book</button>
+                adding books and marking them read. Use the form below to add a book to the library.</p>
+                <form action="#" onsubmit="return false;">
+                    <label for="title">Book Title*</label>
+                    <input type="text" name="title" id="title" required>
+                    <label for="author">Author*</label>
+                    <input type="text" name="author" id="author" required>
+                    <label for="pages"># of Pages*</label>
+                    <input type="number" name="pages" id="pages" required>
+                    <label for="read">Read or Not Read?*</label>
+                    <select name="read" id="read" required>
+                        <option value="" disabled selected>Select One</option>
+                        <option value="read">Read</option>
+                        <option value="not-yet-read">Not Yet Read</option>
+                    </select>
+                    <div class="form-error disabled"></div>
+                    <button class="header-button">Add Book</button>
+                </form>
         </div>
-        <div class="container-shelves">
-            <div class="book">
-                <div class="book-content">
-                    <h2 class="book-title">The Hobbit</h2>
-                    <p class="book-author">J.R.R. Tolkien</p>
-                    <p class="book-pages">295 Pages</p>
-                </div>
-                <div class="book-buttons">
-                    <button class="book-not-read">Not Yet Read</button>
-                    <button class="book-remove">Remove</button>
-                </div>
-            </div>
-        </div>
+        <div id="container-shelves"></div>
     </div>
     </div>
 
